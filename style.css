@@ -1,28 +1,33 @@
-/* استایل پایه */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Tahoma', sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: #ffffff;
+    min-height: 100vh;
     line-height: 1.6;
-    color: #333;
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
-/* نوار ناوبری */
+/* Header */
 header {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 0;
+    background: rgba(15, 32, 39, 0.95);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 nav {
@@ -32,102 +37,347 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links {
+    font-size: 1.8rem;
+    font-weight: 700;
     display: flex;
-    list-style: none;
-    gap: 2rem;
+    align-items: center;
+    gap: 10px;
+    color: #00d4ff;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
+.logo i {
+    font-size: 2rem;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+.version {
+    background: #00d4ff;
+    color: #0f2027;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-/* بخش اصلی */
+/* Hero Section */
 .hero {
+    padding: 4rem 0;
     text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 10px;
-    margin: 2rem 0;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #00d4ff, #0088ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0c8ff;
+    margin-bottom: 3rem;
+}
+
+/* Download Section */
+.download-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.download-card {
+    background: rgba(15, 32, 39, 0.8);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 2px solid #00d4ff;
+}
+
+.download-icon {
+    font-size: 4rem;
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+}
+
+.download-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.version-info {
+    color: #a0c8ff;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.features {
+    text-align: left;
+    background: rgba(0, 132, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+}
+
+.features i {
+    color: #00ff88;
+    margin-right: 10px;
+}
+
+/* Download Button */
+.download-btn {
+    background: linear-gradient(90deg, #00d4ff, #0088ff);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 1.5rem 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+    background: linear-gradient(90deg, #00ffaa, #00aaff);
+}
+
+.download-btn:active {
+    transform: translateY(-1px);
+}
+
+.system-req {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0c8ff;
+    font-size: 0.95rem;
+}
+
+/* Info Cards */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d4ff;
+}
+
+.info-card i {
     font-size: 2.5rem;
+    color: #00d4ff;
     margin-bottom: 1rem;
 }
 
-.cta-button {
-    background: white;
-    color: #667eea;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-top: 1rem;
+.info-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
 }
 
-/* کارت‌ها */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
+.info-card p {
+    color: #a0c8ff;
 }
 
-.feature-card {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 10px;
+/* Steps Section */
+.steps {
+    margin: 5rem 0;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ریسپانسیو برای موبایل */
+.steps h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #00d4ff;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00d4ff;
+    color: #0f2027;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.step h4 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.step p {
+    color: #a0c8ff;
+}
+
+/* FAQ Section */
+.faq {
+    margin: 5rem 0;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #00d4ff;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.faq-item p {
+    color: #a0c8ff;
+    padding-left: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: rgba(15, 32, 39, 0.95);
+    padding: 2.5rem 0;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+footer p {
+    margin-bottom: 1rem;
+    color: #a0c8ff;
+}
+
+.footer-links a {
+    color: #00d4ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-links i {
+    margin-right: 5px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #2c3e50;
-        padding: 1rem;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
-    .features {
+    .download-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .download-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .download-btn {
+        font-size: 1.2rem;
+        padding: 18px 30px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .version {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    .info-cards {
         grid-template-columns: 1fr;
     }
+    
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq {
+        padding: 2rem;
+    }
 }
 
-/* ریسپانسیو برای تبلت */
-@media (max-width: 1024px) {
-    .container {
-        max-width: 90%;
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
     }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .download-btn {
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
 }
